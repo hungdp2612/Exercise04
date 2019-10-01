@@ -15,10 +15,11 @@ namespace ConsoleApplication1
             Console.WriteLine(Pow(2, 3));
             Console.WriteLine(IsPrime(8));
             Console.WriteLine(IsEven(3));
-            Console.WriteLine(Floor(4));
+            Console.WriteLine(Floor(4.4F));
             Console.WriteLine(Cube(-10));
-            Console.WriteLine(Ceil(4.6));
+            Console.WriteLine(Ceil(4.6F));
             Console.WriteLine(Abs(6));
+            Console.WriteLine(Factorial(20L));
 
             Console.ReadKey();
         }
@@ -38,7 +39,7 @@ namespace ConsoleApplication1
             }
             return n;
         }
-        static int Ceil(double x)
+        static int Ceil(float x)
         {
             int n = (int)x;
             if ((n - x) <= 0.5)
@@ -54,7 +55,8 @@ namespace ConsoleApplication1
         }
         static int Floor(float x)
         {
-            return (int)x;
+            int d = (int)(x + 0.5);
+            return d;
         }
         static bool IsEven(int n)
         {
@@ -82,6 +84,13 @@ namespace ConsoleApplication1
         static int Square(int n)
         {
             return n * n;
+        }
+        static long Factorial(long n)
+        {
+            int F = 1;
+            for (int i = 2; i < n; i++)
+                F = F * i;
+            return F;
         }
 
     }
