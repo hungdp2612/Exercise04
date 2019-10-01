@@ -61,10 +61,14 @@ namespace ConsoleApplication1
         }
         public static int Floor(float x)
         {
-            int n = (int)x;
-            if ((n - x) >= 0.5)
-                n = n ;
-            return n;
+            int a = (int)x;
+            if (x < 0 && x != a)
+                a = a - 1;
+            return a;
+            //int n = (int)x;
+            //if ((n - x) >= 0.5)
+            //    n = n ;
+            //return n;
         }
         public static bool IsEven(int n)
         {
