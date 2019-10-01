@@ -15,9 +15,9 @@ namespace ConsoleApplication1
             Console.WriteLine(Pow(2, 3));
             Console.WriteLine(IsPrime(8));
             Console.WriteLine(IsEven(3));
-            Console.WriteLine(Floor(4.4F));
+            Console.WriteLine(Floor(5.7F));
             Console.WriteLine(Cube(-10));
-            Console.WriteLine(Ceil(4.6F));
+            Console.WriteLine(Ceil(4.3F));
             Console.WriteLine(Abs(6));
             Console.WriteLine(Factorial(20L));
 
@@ -31,7 +31,7 @@ namespace ConsoleApplication1
             }
             return false;
         }
-        static int Abs(int n)
+        public static int Abs(int n)
         {
             if (n < 0)
             {
@@ -39,32 +39,40 @@ namespace ConsoleApplication1
             }
             return n;
         }
-        static int Ceil(float x)
+        //input: float x
+        //ouput: int n that is smallest but not smaller than x
+        //idea: n=(int)x then n=n+1
+        //if x is negative then n is unchanged
+        //if x=a then n is unchanged
+        public static int Ceil(float x)
         {
             int n = (int)x;
-            if ((n - x) <= 0.5)
-                n = n + 1;
+            if (x > 0)
+                if(x > n)
+                  n = n + 1;
             return n;
 
-            //int d = (int)(x + 0.5);
-            //return d;
+            //int d = (int)x;
+            //return d=d+1;
         }
-        static int Cube(int n)
+        public static int Cube(int n)
         {
             return n * n * n;
         }
-        static int Floor(float x)
+        public static int Floor(float x)
         {
-            int d = (int)(x + 0.5);
-            return d;
+            int n = (int)x;
+            if ((n - x) >= 0.5)
+                n = n ;
+            return n;
         }
-        static bool IsEven(int n)
+        public static bool IsEven(int n)
         {
             if (n % 2 == 0)
                 return true;
             return false;
         }
-        static bool IsPrime(int n)
+        public static bool IsPrime(int n)
         {
             if (n <= 1)
                 return false;
@@ -74,18 +82,18 @@ namespace ConsoleApplication1
                 }
             return true;
         }
-        static int Pow(int x, int y)
+        public static int Pow(int x, int y)
         {
             int rs = 1;
             for (int i = 1; i <= y; i++)
                 rs = rs * x;
             return rs;
         }
-        static int Square(int n)
+        public static int Square(int n)
         {
             return n * n;
         }
-        static long Factorial(long n)
+        public static long Factorial(long n)
         {
             int F = 1;
             for (int i = 2; i < n; i++)
