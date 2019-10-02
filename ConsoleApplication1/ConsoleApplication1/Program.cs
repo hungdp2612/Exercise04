@@ -20,6 +20,8 @@ namespace ConsoleApplication1
             Console.WriteLine(Ceil(4.3F));
             Console.WriteLine(Abs(6));
             Console.WriteLine(Factorial(20L));
+            Console.WriteLine(Rand1());
+            Console.WriteLine(Rand2());
 
             Console.ReadKey();
         }
@@ -103,6 +105,18 @@ namespace ConsoleApplication1
             for (int i = 2; i < n; i++)
                 F = F * i;
             return F;
+        }
+        public static int Rand1()
+        {
+            Random rd = new Random();
+            int n = rd.Next();
+            return n;
+        }
+        public static float Rand2()
+        {
+            Random rd = new Random();
+            float r = rd.Next() % (0.1F) + (float)rd.Next(0,1);
+            return r;
         }
 
     }
