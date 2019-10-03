@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ConsoleApplication1;
+using Exercise4b;
 
 namespace UnitTestProject1
 {
@@ -77,6 +78,91 @@ namespace UnitTestProject1
             long rs = Program.Factorial(20L);
             Assert.AreEqual(109641728, rs);
         }
-        
+        [TestMethod]
+        public void TestIsContrain5()
+        {
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            bool rs1 = Program2.IsContrain5(arr1);
+            Assert.AreEqual(true, rs1);
+
+            int[] arr2 = new int[] { 1, 2, 3, 4, 6 };
+            bool rs2 = Program2.IsContrain5(arr2);
+            Assert.AreEqual(false, rs2);
+        }
+        [TestMethod]
+        public void TestIsContrain5or6()
+        {
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            bool rs1 = Program2.IsContrain5or6(arr1);
+            Assert.AreEqual(true, rs1);
+
+            int[] arr2 = new int[] { 1, 2, 3, 4, 7 };
+            bool rs2 = Program2.IsContrain5or6(arr2);
+            Assert.AreEqual(false, rs2);
+
+            int[] arr3 = new int[] { 1, 2, 3, 4 };
+            bool rs3 = Program2.IsContrain5or6(arr2);
+            Assert.AreEqual(false, rs3);
+        }
+        [TestMethod]
+        public void TestIsContrain5and6()
+        {
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            bool rs1 = Program2.IsContrain5and6(arr1);
+            Assert.AreEqual(false, rs1);
+
+            int[] arr2 = new int[] { 1, 2, 3, 4, 6 };
+            bool rs2 = Program2.IsContrain5and6(arr2);
+            Assert.AreEqual(false, rs2);
+
+            int[] arr3 = new int[] { 1, 2, 3, 4, 5, 6 };
+            bool rs3 = Program2.IsContrain5and6(arr3);
+            Assert.AreEqual(true, rs3);
+
+            int[] arr4 = new int[] { 1, 2, 3, 4 };
+            bool rs4 = Program2.IsContrain5and6(arr4);
+            Assert.AreEqual(false, rs4);
+        }
+        [TestMethod]
+        public void TestCount5()
+        {
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            int rs1 = Program2.count5(arr1);
+            Assert.AreEqual(1, rs1);
+
+            int[] arr2 = new int[] { 1, 2, 3, 4 };
+            int rs2 = Program2.count5(arr2);
+            Assert.AreEqual(0, rs2);
+
+            int[] arr3 = new int[] { 1, 2, 5, 5, 5 };
+            int rs3 = Program2.count5(arr3);
+            Assert.AreEqual(3, rs3);
+        }
+        [TestMethod]
+        public void TestCount5or6()
+        {
+            int[] arr1 = new int[] { 1, 2, 3, 4, 5 };
+            int rs1 = Program2.count5or6(arr1);
+            Assert.AreEqual(1, rs1);
+
+            int[] arr2 = new int[] { 1, 2, 3, 4 };
+            int rs2 = Program2.count5or6(arr2);
+            Assert.AreEqual(0, rs2);
+
+            int[] arr3 = new int[] { 1, 2, 5, 6, 5 };
+            int rs3 = Program2.count5or6(arr3);
+            Assert.AreEqual(3, rs3);
+        }
+        [TestMethod]
+        public void TestSum()
+        {
+            int[] arr1 = new int[0];
+            int rs1 = Program2.Sum(arr1);
+            Assert.AreEqual(0, rs1);
+
+            int[] arr2 = new int[]{1,2,3,4,-1,5};
+            int rs2 = Program2.Sum(arr2);
+            Assert.AreEqual(14, rs2);
+        }
     }
 }
