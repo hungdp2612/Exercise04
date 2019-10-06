@@ -4,14 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Exercise4b
 {
     public class Program2
     {
         static void Main(string[] args)
         {
-            int[] array = new int[10];
-            InputValue(array);
+            //int[] array = new int[10];
+            //InputValue(array);
+            Console.WriteLine();
+            Drawing.drawU(25);
+            Drawing.drawW(50);
+            Console.ReadKey();
+            
+            
         }
         public static void InputValue(int[] iArr)
         {

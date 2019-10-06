@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Exercise4b
 {
-    class Drawing
+
+    public class Drawing
     {
         private static void Setup(char[,] arr, int n)
         {
@@ -30,7 +31,36 @@ namespace Exercise4b
         }
         public static void drawU(int n)
         {
+            char[,] arr = new char[n, n];
+            Setup(arr, n);
 
+            for (int i = 0; i < n; i++)
+            {
+                arr[i, 0] = 'u';
+                arr[i, n - 1] = 'u';
+                arr[n - 1, i] = 'u';
+            
+            }
+            Print(arr, n);
+        }
+        public static void drawW(int n)
+        {
+            char[,] arr = new char[n*2, n*2];
+            Setup(arr, 2*n);
+
+            for (int i = 0; i < n; i++)
+            {
+                arr[i, i / 2] = 'W';
+
+                arr[i, n + 1 / 2] = 'W';
+
+                arr[i, n - 1 - i / 2] = 'W';
+
+                arr[i, n + n - 1 - i / 2] = 'W';
+          
+                
+            }
+            Print(arr, n*2);
         }
     }
 }
